@@ -1,5 +1,5 @@
 [submodule "/home/tstoner/.config/zsh/custom/themes/powerlevel10k"]
-	path = /home/tstoner/.config/zsh/custom/themes/powerlevel10k
+	path = .config/zsh/custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
