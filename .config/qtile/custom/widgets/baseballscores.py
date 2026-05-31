@@ -31,7 +31,7 @@ class Game:
             return result
     
         elif self.status_code == "I": # In progress
-            sep = "   "
+            sep = " "
 
             result = ""
             result += self.away_abbr + " " + str(self.away_score)
@@ -41,7 +41,7 @@ class Game:
             result += f"{'\u25b2' if self.topInning else '\u25bc'}{self.inning}"
             result += sep
             result += ("\u25cf" * self.outs) + ("\u25cb" * (3 - self.outs))
-            result += "  "
+            result += sep
             result += f"{self.balls}-{self.strikes}"
     
             return result

@@ -60,8 +60,8 @@ keys = [
         desc="Toggle between split and unsplit sides of stack",
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod, "control"], "f",  lazy.spawn("firefox"), desc="Launch web browser"),
-    Key([mod, "control", "shift"], "f",  lazy.spawn("firefox --private-window"), desc="Launch private web browser"),
+    Key([mod, "control"], "b",  lazy.spawn("brave"), desc="Launch web browser"),
+    # Key([mod, "control", "shift"], "f",  lazy.spawn("firefox --private-window"), desc="Launch private web browser"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
@@ -138,8 +138,8 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="sans",
-    fontsize=12,
+    font="MesloLGS Nerd Font Mono",
+    fontsize=24,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
@@ -153,14 +153,14 @@ screens = [
                 widget.CryptoTicker(crypto='BTC', update_interval=60),
                 widget.CryptoTicker(crypto='ETH', update_interval=60),
                 widget.CryptoTicker(crypto='XRP', update_interval=60),
-                widget.Sep(),
-                BaseballScores(team_id=146, update_interval=30),
-                widget.Sep(),
-                BaseballScores(team_id=116, update_interval=30),
-                widget.Sep(),
-                BaseballScores(team_id=139, update_interval=30),
-                widget.Sep(),
-                BaseballScores(team_id=143, update_interval=30),
+#                widget.Sep(),
+#                BaseballScores(team_id=146, update_interval=30),
+#                widget.Sep(),
+#                BaseballScores(team_id=116, update_interval=30),
+#                widget.Sep(),
+#                BaseballScores(team_id=139, update_interval=30),
+#                widget.Sep(),
+#                BaseballScores(team_id=143, update_interval=30),
                 widget.Sep(),
                 BaseballScores(team_id=111, update_interval=30),
                 widget.Sep(),
@@ -178,7 +178,7 @@ screens = [
                 widget.Memory(format='{SwapUsed: .0f}{ms}/{SwapTotal: .0f}{ms}'),
                 widget.Spacer(length=15),
             ],
-            24,
+            48,
             background=bar_background_color,
             margin=[7, 7, 0, 7],
         ),
@@ -196,11 +196,11 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Systray(),
-                widget.Clock(format="%a %d %b %H:%M:%S.%f %Z", update_interval=0.02),
+                widget.Clock(format="%a %d %b %H:%M:%S %Z", update_interval=0.02),
                 widget.QuickExit(),
                 widget.Spacer(length=15),
             ],
-            24,
+            48,
             background=bar_background_color,
             margin=[0, 7, 7, 7],
         ),
@@ -266,10 +266,6 @@ import subprocess
 @hook.subscribe.startup_once
 def startup_once():
     subprocess.call([f"{Path.home()}/.config/qtile/startup_once.sh"])
-
-@hook.subscribe.startup_complete
-def startup_complete():
-    subprocess.call([f"{Path.home()}/.config/qtile/startup_complete.sh"])
 
 # xcursor theme (string or None) and size (integer) for Wayland backend
 wl_xcursor_theme = None

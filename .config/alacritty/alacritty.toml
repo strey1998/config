@@ -2,7 +2,7 @@
 decorations = "None"
 
 [font]
-size = 10.0
+size = 20.0
 
 [font.normal]
 family = "MesloLGS Nerd Font Mono"

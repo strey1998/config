@@ -40,5 +40,4 @@ if [ -f "$usermodmap" ]; then
     "$xmodmap" "$usermodmap"
 fi
 
-picom &
 exec qtile start
